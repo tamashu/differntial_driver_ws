@@ -1,0 +1,1470 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>131 226000000</sim_time>
+      <real_time>55 462871045</real_time>
+      <wall_time>1675823699 439531254</wall_time>
+      <iterations>12087</iterations>
+      <model name='Mighty'>
+        <pose>-0.000175 -0.001969 0.001001 -6.3e-05 -0 -0.002099</pose>
+        <scale>1 1 1</scale>
+        <link name='base_footprint'>
+          <pose>-0.000175 -0.001969 0.001001 -6.3e-05 -0 -0.002099</pose>
+          <velocity>0.000137 9e-05 0.005206 -7e-05 3.1e-05 -0.00049</velocity>
+          <acceleration>0.026399 0.029423 10.4226 -0.141866 0.065647 -0.344782</acceleration>
+          <wrench>0.569172 0.63437 224.711 0 -0 0</wrench>
+        </link>
+        <link name='leg_bottom_back_left'>
+          <pose>-0.257711 0.219463 0.191912 -7.1e-05 5e-06 0.022293</pose>
+          <velocity>0.000197 0.000221 0.005047 -0.001607 0.000629 0.000469</velocity>
+          <acceleration>0.067577 -0.112207 10.3449 2.98812 1.34855 2.15453</acceleration>
+          <wrench>0.123457 -0.20499 18.8991 0 -0 0</wrench>
+        </link>
+        <link name='leg_bottom_back_right'>
+          <pose>-0.258638 -0.222137 0.191939 -6.2e-05 -1e-06 -0.023497</pose>
+          <velocity>2.8e-05 1.9e-05 0.005118 -1.9e-05 8.9e-05 -0.000956</velocity>
+          <acceleration>-0.017708 -0.334033 10.2479 -0.039502 0.172904 -0.924147</acceleration>
+          <wrench>-0.032333 -0.609904 18.7115 0 -0 0</wrench>
+        </link>
+        <link name='leg_bottom_forward_left'>
+          <pose>0.234286 0.21793 0.191914 -4.1e-05 1e-06 -0.025351</pose>
+          <velocity>0.000198 -4.2e-05 0.005586 0.004251 0.000347 -0.000112</velocity>
+          <acceleration>-0.030009 0.323398 10.5433 2.14755 0.932261 0.416551</acceleration>
+          <wrench>-0.054793 0.590486 19.2508 0 -0 0</wrench>
+        </link>
+        <link name='leg_bottom_forward_right'>
+          <pose>0.23336 -0.223669 0.191939 -5.6e-05 2e-06 0.020671</pose>
+          <velocity>2.5e-05 -4.5e-05 0.005042 0.001243 0.000143 -0.000587</velocity>
+          <acceleration>-0.044177 -0.009019 10.2787 2.53077 0.257198 -0.73361</acceleration>
+          <wrench>-0.080661 -0.016468 18.7677 0 -0 0</wrench>
+        </link>
+        <link name='wheel_back_left'>
+          <pose>-0.257143 0.193962 0.084913 -6.8e-05 -0.012519 0.022293</pose>
+          <velocity>0.000143 0.000102 0.004991 -0.001187 0.00159 0.000301</velocity>
+          <acceleration>-0.155177 -0.175321 9.91274 0.793483 0.919144 -1.34227</acceleration>
+          <wrench>-0.110516 -0.124863 7.05978 0 -0 0</wrench>
+        </link>
+        <link name='wheel_back_right'>
+          <pose>-0.258039 -0.196651 0.084941 -6.5e-05 -0.034364 -0.023495</pose>
+          <velocity>4.6e-05 3.5e-05 0.005775 -0.000454 0.00024 -0.000957</velocity>
+          <acceleration>-0.097874 -0.301555 11.5724 -1.02944 0.349617 -0.926323</acceleration>
+          <wrench>-0.069705 -0.214765 8.24179 0 -0 0</wrench>
+        </link>
+        <link name='wheel_forward_left'>
+          <pose>0.23364 0.192433 0.084918 -7e-05 0.014654 -0.025354</pose>
+          <velocity>0.000129 0.000122 0.005954 -0.001423 0.001641 -0.000353</velocity>
+          <acceleration>-0.138698 0.176426 11.8177 0.173372 0.953147 3.02784</acceleration>
+          <wrench>-0.09878 0.125649 8.41646 0 -0 0</wrench>
+        </link>
+        <link name='wheel_forward_right'>
+          <pose>0.232833 -0.198181 0.084937 -6.3e-05 0.029202 0.020669</pose>
+          <velocity>2.9e-05 1.4e-05 0.004948 -0.000152 0.000151 -0.000596</velocity>
+          <acceleration>-0.112367 -0.035402 9.90541 -0.402373 0.282789 -0.756587</acceleration>
+          <wrench>-0.080027 -0.025213 7.05456 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='willowgarage'>
+        <pose>-7.38582 -3.46607 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='walls'>
+          <pose>-7.38582 -3.46607 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>12.3098 -10.8277 25.783 0 1.05964 2.0642</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='Mighty'>
+      <link name='base_footprint'>
+        <inertial>
+          <pose>-0.006502 -0.000287 0.406006 0 -0 0</pose>
+          <mass>21.56</mass>
+          <inertia>
+            <ixx>0.803916</ixx>
+            <ixy>0.000861043</ixy>
+            <ixz>-0.000837225</ixz>
+            <iyy>1.12605</iyy>
+            <iyz>-0.000463106</iyz>
+            <izz>1.29867</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_footprint_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_footprint.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__imu_link_collision_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/imu_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__base_scan_collision_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_scan.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__laser_collision_4'>
+          <pose>9e-06 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_scan.stl</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__front_lidar_collision_5'>
+          <pose>1.8e-05 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/front_lidar.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__rear_lidar_collision_6'>
+          <pose>1.8e-05 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/rear_lidar.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__legbase_left_collision_7'>
+          <pose>0 -0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/legbase_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__leg_top_forward_left_collision_8'>
+          <pose>0 0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__leg_top_back_left_collision_9'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__legbase_right_collision_10'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/legbase_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__leg_top_forward_right_collision_11'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__leg_top_back_right_collision_12'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_footprint_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_footprint.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__base_link_visual_1'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__imu_link_visual_2'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/imu_link.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__base_scan_visual_3'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_scan.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__laser_visual_4'>
+          <pose>9e-06 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/base_scan.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__front_lidar_visual_5'>
+          <pose>1.8e-05 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/front_lidar.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__rear_lidar_visual_6'>
+          <pose>1.8e-05 -1e-06 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/rear_lidar.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__legbase_left_visual_7'>
+          <pose>0 -0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/legbase_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__leg_top_forward_left_visual_8'>
+          <pose>0 0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__leg_top_back_left_visual_9'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__legbase_right_visual_10'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/legbase_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__leg_top_forward_right_visual_11'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__leg_top_back_right_visual_12'>
+          <pose>0 -0 -0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_top_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <gravity>1</gravity>
+        <sensor name='imu_sensor' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>100</update_rate>
+          <visualize>1</visualize>
+          <topic>__default_topic__</topic>
+          <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+            <topicName>imu</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>10.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+            <initialOrientationAsReference>0</initialOrientationAsReference>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0 9e-06 0.468425 0 -0 0</pose>
+          <imu/>
+        </sensor>
+        <sensor name='front_laser' type='ray'>
+          <always_on>1</always_on>
+          <update_rate>10</update_rate>
+          <visualize>0</visualize>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>400</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.1415</min_angle>
+                <max_angle>3.1415</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.05</min>
+              <max>20</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_lidar_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/raw_scan_front</topicName>
+            <frameName>front_lidar</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.292018 8e-06 0.415225 0 -0 0</pose>
+        </sensor>
+        <sensor name='rear_laser' type='ray'>
+          <always_on>1</always_on>
+          <update_rate>10</update_rate>
+          <visualize>0</visualize>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>400</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.1415</min_angle>
+                <max_angle>3.1415</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.05</min>
+              <max>20</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_lidar_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/raw_scan_rear</topicName>
+            <frameName>rear_lidar</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>-0.279982 8e-06 0.415225 0 -0 0</pose>
+        </sensor>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_steer2' type='revolute'>
+        <pose relative_to='base_footprint'>0.234 0.220379 0.190925 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>leg_bottom_forward_left</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-1.0472</lower>
+            <upper>1.5708</upper>
+            <effort>1000</effort>
+            <velocity>100</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='leg_bottom_forward_left'>
+        <pose relative_to='rev_steer2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>3e-06 -0.07534 -0.055858 0 -0 0</pose>
+          <mass>1.82588</mass>
+          <inertia>
+            <ixx>0.005591</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.002814</iyy>
+            <iyz>-0.000421</iyz>
+            <izz>0.004114</izz>
+          </inertia>
+        </inertial>
+        <collision name='leg_bottom_forward_left_collision'>
+          <pose>-0.234 -0.220379 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='leg_bottom_forward_left_visual'>
+          <pose>-0.234 -0.220379 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_wheel1' type='revolute'>
+        <pose relative_to='leg_bottom_forward_left'>0 -0.0255 -0.107 0 -0 0</pose>
+        <parent>leg_bottom_forward_left</parent>
+        <child>wheel_forward_left</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>10</effort>
+            <velocity>50</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel_forward_left'>
+        <pose relative_to='rev_wheel1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-9.9e-05 0.030752 -8.3e-05 0 -0 0</pose>
+          <mass>0.712192</mass>
+          <inertia>
+            <ixx>0.001373</ixx>
+            <ixy>0</ixy>
+            <ixz>1e-06</ixz>
+            <iyy>0.002557</iyy>
+            <iyz>0</iyz>
+            <izz>0.001374</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel_forward_left_collision'>
+          <pose>-0.234 -0.194879 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel_forward_left_visual'>
+          <pose>-0.234 -0.194879 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_forward_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_steer3' type='revolute'>
+        <pose relative_to='base_footprint'>-0.258 0.220879 0.190925 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>leg_bottom_back_left</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.0472</upper>
+            <effort>1000</effort>
+            <velocity>100</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='leg_bottom_back_left'>
+        <pose relative_to='rev_steer3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-4e-06 -0.075318 -0.055886 0 -0 0</pose>
+          <mass>1.82689</mass>
+          <inertia>
+            <ixx>0.005596</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.002817</iyy>
+            <iyz>-0.000419</iyz>
+            <izz>0.004116</izz>
+          </inertia>
+        </inertial>
+        <collision name='leg_bottom_back_left_collision'>
+          <pose>0.258 -0.220879 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='leg_bottom_back_left_visual'>
+          <pose>0.258 -0.220879 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_wheel3' type='revolute'>
+        <pose relative_to='leg_bottom_back_left'>0 -0.0255 -0.107 0 -0 0</pose>
+        <parent>leg_bottom_back_left</parent>
+        <child>wheel_back_left</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>10</effort>
+            <velocity>50</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel_back_left'>
+        <pose relative_to='rev_wheel3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>9.9e-05 0.030752 -8.3e-05 0 -0 0</pose>
+          <mass>0.712192</mass>
+          <inertia>
+            <ixx>0.001373</ixx>
+            <ixy>0</ixy>
+            <ixz>-1e-06</ixz>
+            <iyy>0.002557</iyy>
+            <iyz>0</iyz>
+            <izz>0.001374</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel_back_left_collision'>
+          <pose>0.258 -0.195379 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel_back_left_visual'>
+          <pose>0.258 -0.195379 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_back_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_steer1' type='revolute'>
+        <pose relative_to='base_footprint'>0.234 -0.221221 0.190925 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>leg_bottom_forward_right</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.0472</upper>
+            <effort>1000</effort>
+            <velocity>100</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='leg_bottom_forward_right'>
+        <pose relative_to='rev_steer1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>3e-06 0.07534 -0.055858 0 -0 0</pose>
+          <mass>1.82588</mass>
+          <inertia>
+            <ixx>0.005591</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.002814</iyy>
+            <iyz>0.000421</iyz>
+            <izz>0.004114</izz>
+          </inertia>
+        </inertial>
+        <collision name='leg_bottom_forward_right_collision'>
+          <pose>-0.234 0.221221 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='leg_bottom_forward_right_visual'>
+          <pose>-0.234 0.221221 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_wheel2' type='revolute'>
+        <pose relative_to='leg_bottom_forward_right'>0 0.0255 -0.107 0 -0 0</pose>
+        <parent>leg_bottom_forward_right</parent>
+        <child>wheel_forward_right</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>10</effort>
+            <velocity>50</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel_forward_right'>
+        <pose relative_to='rev_wheel2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-9.9e-05 -0.030753 -8.3e-05 0 -0 0</pose>
+          <mass>0.712192</mass>
+          <inertia>
+            <ixx>0.001373</ixx>
+            <ixy>0</ixy>
+            <ixz>1e-06</ixz>
+            <iyy>0.002557</iyy>
+            <iyz>0</iyz>
+            <izz>0.001374</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel_forward_right_collision'>
+          <pose>-0.234 0.195721 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel_forward_right_visual'>
+          <pose>-0.234 0.195721 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_forward_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_steer4' type='revolute'>
+        <pose relative_to='base_footprint'>-0.258 -0.220721 0.190925 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>leg_bottom_back_right</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-1.0472</lower>
+            <upper>1.5708</upper>
+            <effort>1000</effort>
+            <velocity>100</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='leg_bottom_back_right'>
+        <pose relative_to='rev_steer4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-3e-06 0.07534 -0.055858 0 -0 0</pose>
+          <mass>1.82588</mass>
+          <inertia>
+            <ixx>0.005591</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.002814</iyy>
+            <iyz>0.000421</iyz>
+            <izz>0.004114</izz>
+          </inertia>
+        </inertial>
+        <collision name='leg_bottom_back_right_collision'>
+          <pose>0.258 0.220721 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='leg_bottom_back_right_visual'>
+          <pose>0.258 0.220721 -0.190925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/leg_bottom_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='rev_wheel4' type='revolute'>
+        <pose relative_to='leg_bottom_back_right'>0 0.0255 -0.107 0 -0 0</pose>
+        <parent>leg_bottom_back_right</parent>
+        <child>wheel_back_right</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>10</effort>
+            <velocity>50</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wheel_back_right'>
+        <pose relative_to='rev_wheel4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>9.9e-05 -0.030753 -8.3e-05 0 -0 0</pose>
+          <mass>0.712192</mass>
+          <inertia>
+            <ixx>0.001373</ixx>
+            <ixy>0</ixy>
+            <ixz>-1e-06</ixz>
+            <iyy>0.002557</iyy>
+            <iyz>0</iyz>
+            <izz>0.001374</izz>
+          </inertia>
+        </inertial>
+        <collision name='wheel_back_right_collision'>
+          <pose>0.258 0.195221 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wheel_back_right_visual'>
+          <pose>0.258 0.195221 -0.083925 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/piezo/ros_ws/src/mighty3_model/meshes/wheel_back_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Silver</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>1</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/mighty</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>1</legacyModeNS>
+      </plugin>
+      <plugin name='ground_truth' filename='libgazebo_ros_p3d.so'>
+        <frameName>/map</frameName>
+        <bodyName>base_footprint</bodyName>
+        <topicName>/wheel_odom</topicName>
+        <updateRate>10.0</updateRate>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='willowgarage'>
+      <static>1</static>
+      <pose>-7.38582 -3.46607 0 0 -0 0</pose>
+      <link name='walls'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_collision.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://willowgarage/meshes/willowgarage_visual.dae</uri>
+            </mesh>
+          </geometry>
+          <cast_shadows>0</cast_shadows>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+  </world>
+</sdf>
