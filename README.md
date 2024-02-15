@@ -11,5 +11,5 @@ sudo apt install ros-noetic-gazebo-ros-control ros-noetic-diff-drive-controller 
 ```
 追加で導入したパッケージ
 ```
-sudo apt install ros-noetic-gmapping ros-noetic-joy
+sudo apt install ros-noetic-gmapping ros-noetic-joy ros-noetic-map-server
 ```
