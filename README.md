@@ -1,4 +1,4 @@
-# 差動二輪によるSLAMの勉強用レポ
+# 差動二輪を使用したSLAMの勉強用レポ
 
 ## 使用ロボット
 Pioneer 3-DX(https://robots.ros.org/pioneer-3-dx/)
