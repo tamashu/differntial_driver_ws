@@ -7,6 +7,4 @@
 
     <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
     <node name="joy2Twist" pkg="p3dx_driver" type="joy2Twist" output="screen"/>
-
-    
 </launch>
